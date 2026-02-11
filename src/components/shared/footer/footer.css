@@ -1,0 +1,14 @@
+.footer {
+  display: grid;
+  place-items: center;
+  background: 
+      /* Background image with dark overlay */ linear-gradient(
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.52)
+    ),
+    /* Transparent to dark gradient */
+      url("https://img.freepik.com/free-photo/amazing-bengal-tigers-nature_475641-1135.jpg?w=996&t=st=1719949233~exp=1719949833~hmac=49eb2abee1b1199d7abd0b6295ce7d384dcd5aaaa7737b0386925c97d4b24ca1")
+      center/cover; /* Replace 'your-image-url.jpg' with your actual image URL */
+  color-scheme: dark only;
+}

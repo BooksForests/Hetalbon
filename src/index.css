@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll var(--animation-duration, 40s) linear infinite;
+  animation-direction: var(--animation-direction, forwards);
+}
+
+
+.hidescroll::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .hidescroll {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+
+  .melting {
+    animation: meltingEffect 1s forwards; /* Apply the melting effect */
+  }
+  
+  @keyframes meltingEffect {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1); /* Slightly enlarge the image */
+      opacity: 0.5; /* Fade out slightly */
+    }
+    100% {
+      transform: scale(1); /* Reset the scale */
+      opacity: 1; /* Reset opacity */
+    }
+  }
+  
+  .show {
+    opacity: 1;
+  }
+  
+  .hide {
+    opacity: 0;
+  }
+.df-3dcanvas {
+  
+}
+
+  .bgImg {
+    display: grid;
+    place-items: center;
+    background: 
+      linear-gradient(
+        rgba(0, 0, 0, 0.3), 
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.1),
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.3) 
+      ),
+      url("https://img.freepik.com/free-photo/green-wallpaper-with-green-background-white-background_1340-36458.jpg?t=st=1730144967~exp=1730148567~hmac=bca0470d26b0c75d6a2b3ae0acc2b757c511201d93b69c7cc2c85fc2edb5d0be&w=996")
+      center/cover; 
+    color-scheme: dark only;
+  }
+  .bgImg2 {
+    display: grid;
+    place-items: center;
+    background: 
+      linear-gradient(
+        rgba(0, 0, 0, 0.3), 
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.1),
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.3) 
+      ),
+      url("./assets/img2.jpg")
+      center/cover; 
+    color-scheme: dark only;
+  }
+  
+  
+  .bgImg3 {
+    display: grid;
+    place-items: center;
+    background: 
+      linear-gradient(
+        rgba(0, 0, 0, 0.3), 
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.1),
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.3) 
+      ),
+      url("./assets/img3.jpg")
+      center/cover; 
+    color-scheme: dark only;
+  }
+
+  @keyframes pulseSlow {
+    0%, 100% { opacity: 1; transform: scale(1.05); }
+    50% { opacity: 0.95; transform: scale(1.0); }
+  }
+  .animate-pulse-slow {
+    animation: pulseSlow 10s ease-in-out infinite;
+  }
