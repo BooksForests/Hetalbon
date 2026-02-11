@@ -40,55 +40,32 @@ const About = () => {
       <Navbar scrollEffectEnabled={true} />
 
       {/* Hero Section */}
-      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
-        <motion.div
-          initial={{ scale: 1.15 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 2, ease: "easeOut" }}
-          className="absolute inset-0 z-0"
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-white z-10" />
+      <section className="relative h-[65vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-black/40 z-10" />
           <img
-            src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=2071&auto=format&fit=crop"
+            src="https://imgs.search.brave.com/9Oc3GWZIR8xVN5Hat81kglRt-Gm_k7pwB4khxtz8cPg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aG9saWRpZnkuY29t/L2ltYWdlcy9jbXN1/cGxvYWRzL2NvbXBy/ZXNzZWQvU3VuZGFy/YmFuX1RpZ2VyXzIw/MTgwMjEyMTYzNzQ3/LmpwZw"
             alt="Sundarbans National Park"
             className="w-full h-full object-cover"
           />
-        </motion.div>
+        </div>
 
-        <div className="relative z-20 text-center px-4 max-w-5xl">
+        <div className="relative z-20 text-center px-4 max-w-4xl">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.3 }}
+            transition={{ duration: 0.8 }}
           >
-            <span className="inline-flex items-center gap-2 px-6 py-2.5 mb-10 text-xs font-bold tracking-[0.3em] text-white uppercase bg-green-900/60 backdrop-blur-2xl rounded-full border border-white/20 shadow-2xl shadow-green-900/40">
-              <IconLeaf size={16} className="text-[#a97105]" />
-              Authentic Eco-Tourism
-            </span>
-            <h1 className="text-6xl md:text-9xl font-black text-white mb-10 leading-[0.85] tracking-tight">
-              About <br />
-              <span className="text-[#a97105] drop-shadow-[0_8px_20px_rgba(169,113,5,0.4)]">Hetalbon</span>
+            <h1 className="text-4xl md:text-8xl font-bold text-white mb-6">
+              About <span className="text-[#a97105]">Hetalbon</span>
             </h1>
-            <p className="text-xl md:text-3xl text-white/90 font-extralight leading-relaxed max-w-3xl mx-auto mb-12 drop-shadow-lg">
-              A serene sanctuary where the wild heart of the <span className="font-semibold italic text-green-400">Sundarbans</span> meets mindful luxury.
+            <p className="text-lg md:text-xl text-white/90 font-light leading-relaxed max-w-2xl mx-auto">
+              A serene sanctuary where nature and comfort meet in the heart of the Sundarbans.
             </p>
           </motion.div>
         </div>
 
-        {/* Floating Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2, duration: 1 }}
-          className="absolute bottom-16 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-3"
-        >
-          <span className="text-gray-900/50 text-[10px] uppercase tracking-[0.5em] font-bold">Discover</span>
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-[2px] h-16 bg-gradient-to-b from-gray-900/50 to-transparent"
-          />
-        </motion.div>
+        <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent z-20" />
       </section>
 
       {/* Intro Section */}
