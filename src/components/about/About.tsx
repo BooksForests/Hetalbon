@@ -11,6 +11,7 @@ import {
   IconUsersGroup,
   IconMapPins
 } from "@tabler/icons-react";
+import img from "../../assets/image.png"
 import Navbar from "../shared/navbar/Navbar";
 import { useNavigate } from "react-router-dom";
 import Layout from "../layout/Layout";
@@ -258,7 +259,7 @@ const About = () => {
             <div className="relative">
               <div className="rounded-[40px] overflow-hidden rotate-3 hover:rotate-0 transition-transform duration-500 shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1544735038-179ad91b0522?q=80&w=2070&auto=format&fit=crop"
+                  src={"https://imgs.search.brave.com/Sl-LyKkI_JmNdDC_GasA12WFHfHbqhxRrLqPkEEap2U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudG9paW1nLmNv/bS9waG90by80MDkx/NDg1OS8uanBn"}
                   alt="Resort View"
                   className="w-full h-[500px] object-cover"
                 />
