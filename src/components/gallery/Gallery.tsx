@@ -170,6 +170,8 @@ const galleryImages = [
 
 const categories = ["All", "Glassroom", "Mud Houses", "Rooms"];
 
+import { motion, AnimatePresence } from "framer-motion";
+
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [currentIndex, setCurrentIndex] = useState<any>(null);
@@ -217,63 +219,111 @@ const Gallery = () => {
       <Navbar scrollEffectEnabled={false} />
 
       {/* Hero Section */}
-      <div className="relative bgImg2 w-full h-[50vh] min-h-[400px]">
-        <div className="absolute inset-0 h-full w-full bg-black/50"></div>
-        <div className="relative h-full flex flex-col items-center justify-center text-center px-4">
-          <h2 className="antialiased tracking-tight font-bold leading-tight text-white mb-6 text-4xl md:text-5xl lg:text-6xl">
+      <section className="relative w-full h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+        {/* Background Animation/Image */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-black/50 z-10" />
+          <img
+            src={"https://scontent.fdel3-2.fna.fbcdn.net/v/t39.30808-6/625290419_756960774126701_5471319834556177461_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=13d280&_nc_ohc=KjocGvdsJ1IQ7kNvwFb7AEt&_nc_oc=AdnVRamBGbHrkcCBfDcAptVnuEC4IKPDfCr6au4xx2An67DXdZ0iOHEj6IwDr8Aikr8MjHdZzckSbUtyjZp0XcG9&_nc_zt=23&_nc_ht=scontent.fdel3-2.fna&_nc_gid=O669ozjlRLbqpMn7yIMxFw&oh=00_AfuEIoRroNIAA3uJscTbFs2BQgnPti-YoHLnKa3Pm1lFjw&oe=69A4C575"}
+            alt="Hero Background"
+            className="w-full h-full object-cover scale-105 animate-slow-zoom"
+          />
+        </div>
+
+        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-[#a97105] font-semibold tracking-[0.2em] uppercase text-sm mb-4 block"
+          >
+            A Visual Journey
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-white text-5xl md:text-7xl font-bold mb-6 tracking-tight"
+          >
             Our <span className="text-[#a97105]">Experience</span>
-          </h2>
-          <div className="w-24 h-1 bg-[#a97105] mb-8"></div>
-          <p className="max-w-2xl font-sans text-lg md:text-xl font-light leading-relaxed text-gray-200">
-            A visual journey through the heart of the Sundarbans. From our
-            breathtaking views to our premium glassroom experiences.
-          </p>
+          </motion.h1>
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="w-24 h-1 bg-[#a97105] mx-auto mb-8"
+          />
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="text-gray-200 text-lg md:text-xl font-light leading-relaxed tracking-wide"
+          >
+            Immerse yourself in the tranquility of Sundarbans through our
+            curated collection of moments. From premium glassroom views to the
+            authentic charm of our mud houses.
+          </motion.p>
         </div>
-      </div>
+      </section>
 
-      {/* Gallery Section */}
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => {
-                setActiveCategory(cat);
-                setCurrentIndex(null);
-              }}
-              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${activeCategory === cat
-                ? "bg-[#a97105] text-white shadow-lg scale-105"
-                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
+      {/* Main Content */}
+      <main className="bg-white min-h-screen">
+        <div className="max-w-[1400px] mx-auto px-4 py-20">
+          {/* Category Filter */}
+          <div className="flex flex-wrap justify-center gap-3 mb-16">
+            {categories.map((cat, idx) => (
+              <motion.button
+                key={cat}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.1 }}
+                onClick={() => {
+                  setActiveCategory(cat);
+                  setCurrentIndex(null);
+                }}
+                className={`relative px-8 py-3 rounded-full text-sm font-semibold tracking-wide transition-all duration-500 overflow-hidden ${activeCategory === cat
+                  ? "text-white shadow-[0_10px_20px_rgba(169,113,5,0.3)]"
+                  : "text-gray-500 hover:text-gray-800 bg-gray-50"
+                  }`}
+              >
+                <span className="relative z-10">{cat}</span>
+                {activeCategory === cat && (
+                  <motion.div
+                    layoutId="activeTab"
+                    className="absolute inset-0 bg-[#a97105] z-0"
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                  />
+                )}
+              </motion.button>
+            ))}
+          </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredImages.map((img, index) => (
-            <div
-              key={index}
-              className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-2xl transition-all duration-500 aspect-[4/3]"
-            >
-              <GalleryGrid
-                image={img.url}
-                onClick={() => openModal(index)}
-                className="w-full h-full transform group-hover:scale-110 transition-transform duration-700 object-cover"
-              />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300"></div>
-              <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                <span className="bg-[#a97105] text-white text-xs px-3 py-1 rounded-full">
-                  {img.category}
-                </span>
-              </div>
-            </div>
-          ))}
+          {/* Image Grid */}
+          <motion.div
+            layout
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            <AnimatePresence mode="popLayout">
+              {filteredImages.map((img, index) => (
+                <motion.div
+                  key={img.url}
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <GalleryGrid
+                    image={img.url}
+                    category={img.category}
+                    onClick={() => openModal(index)}
+                    className="aspect-[4/5] sm:aspect-square lg:aspect-[4/5]"
+                  />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
         </div>
-      </div>
+      </main>
 
       <ImageModal
         images={filteredImages.map((img) => img.url)}
@@ -282,6 +332,16 @@ const Gallery = () => {
         onPrev={goToPrev}
         onNext={goToNext}
       />
+
+      <style>{`
+        @keyframes slow-zoom {
+          from { transform: scale(1); }
+          to { transform: scale(1.1); }
+        }
+        .animate-slow-zoom {
+          animation: slow-zoom 20s infinite alternate ease-in-out;
+        }
+      `}</style>
     </Layout>
   );
 };
