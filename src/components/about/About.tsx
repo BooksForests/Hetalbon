@@ -11,12 +11,15 @@ import {
   IconUsersGroup,
   IconMapPins
 } from "@tabler/icons-react";
-import img from "../../assets/image.png"
+// import img from "../../assets/image.png"
 import Navbar from "../shared/navbar/Navbar";
 import { useNavigate } from "react-router-dom";
 import Layout from "../layout/Layout";
 import { Helmet } from "react-helmet-async";
-import aboutimg from "../../assets/aboutus/WhatsApp Image 2024-07-01 at 12.18.38.jpeg";
+// import aboutimg from "../../assets/aboutus/WhatsApp Image 2024-07-01 at 12.18.38.jpeg";
+import tigerimg1 from "../../assets/tiger.png";
+import cottimg from "../../assets/cott.png";
+
 
 const About = () => {
   const navigate = useNavigate();
@@ -45,7 +48,7 @@ const About = () => {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/40 z-10" />
           <img
-            src="https://imgs.search.brave.com/9Oc3GWZIR8xVN5Hat81kglRt-Gm_k7pwB4khxtz8cPg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aG9saWRpZnkuY29t/L2ltYWdlcy9jbXN1/cGxvYWRzL2NvbXBy/ZXNzZWQvU3VuZGFy/YmFuX1RpZ2VyXzIw/MTgwMjEyMTYzNzQ3/LmpwZw"
+            src="https://res.cloudinary.com/di4xpdjfs/image/upload/v1772013092/WhatsApp_Image_2026-02-12_at_21.40.10_hn7tmk.jpg"
             alt="Sundarbans National Park"
             className="w-full h-full object-cover"
           />
@@ -58,10 +61,10 @@ const About = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl md:text-8xl font-bold text-white mb-6">
-              About <span className="text-[#a97105]">Hetalbon</span>
+              About Hetalbon <span className="text-[#a97105]">Eco Resort </span>
             </h1>
-            <p className="text-lg md:text-xl text-white/90 font-light leading-relaxed max-w-2xl mx-auto">
-              A serene sanctuary where nature and comfort meet in the heart of the Sundarbans.
+            <p className="text-lg md:text-3xl text-white/90 font-light leading-relaxed max-w-2xl mx-auto">
+              Best Eco Resort in Sundarbans
             </p>
           </motion.div>
         </div>
@@ -76,15 +79,13 @@ const About = () => {
             <motion.div {...fadeIn}>
               <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">
                 Your Peaceful Retreat in <br />
-                <span className="text-green-800">Sundarbans</span>
+                <span className="text-green-800">Hetalbon Eco Resort</span>
               </h2>
               <div className="space-y-6 text-gray-600 text-lg leading-relaxed text-justify">
                 <p>
-                  Welcome to Hetalbon Eco Resort, a peaceful eco resort in Sundarbans, located in the heart of Sundarbans National Park, West Bengal. Surrounded by rivers, mangrove forests, and rich wildlife, our resort is an ideal choice for travellers looking for a comfortable nature retreat.
+                  Welcome to Hetalbon Eco Resort, a peaceful eco resort in Sundarbans, located in the heart of Sundarbans National Park, West Bengal. Surrounded by rivers, mangrove forests, and rich wildlife, our resort is an ideal choice for travellers looking for a comfortable nature retreat in Sundarbans. We welcome families, couples, and nature lovers who want a simple, eco-friendly stay close to nature.
                 </p>
-                <p>
-                  We welcome families, couples, and nature lovers who want a simple, eco-friendly stay close to nature. Our resort is designed to offer an honest experience without disturbing the delicate balance of the environment.
-                </p>
+
               </div>
             </motion.div>
 
@@ -96,7 +97,7 @@ const About = () => {
             >
               <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src={aboutimg}
+                  src={tigerimg1}
                   alt="Resort Entrance"
                   className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                 />
@@ -135,8 +136,7 @@ const About = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900">Roots of Hetalbon</h3>
               <p className="text-gray-600 leading-relaxed text-justify">
-                Hetalbon Eco Resort was created with one clear idea — to offer guests an honest and close-to-nature experience in the Sundarbans. We wanted to build a place where visitors can enjoy this natural beauty without disturbing the environment. This region is known for its unique mangrove forests, calm waterways, and diverse wildlife.
-              </p>
+                Hetalbon Eco Resort was created with one clear idea — to offer guests an honest and close-to-nature experience in the Sundarbans. This region is known for its unique mangrove forests, calm waterways, and diverse wildlife. We wanted to build a place where visitors can enjoy all this natural beauty without disturbing the environment.   </p>
             </motion.div>
 
             <motion.div
@@ -259,7 +259,7 @@ const About = () => {
             <div className="relative">
               <div className="rounded-[40px] overflow-hidden rotate-3 hover:rotate-0 transition-transform duration-500 shadow-2xl">
                 <img
-                  src={"https://imgs.search.brave.com/Sl-LyKkI_JmNdDC_GasA12WFHfHbqhxRrLqPkEEap2U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudG9paW1nLmNv/bS9waG90by80MDkx/NDg1OS8uanBn"}
+                  src={cottimg}
                   alt="Resort View"
                   className="w-full h-[500px] object-cover"
                 />
@@ -277,12 +277,9 @@ const About = () => {
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/5 rounded-full translate-y-1/2 -translate-x-1/2" />
 
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 relative z-10">
-              Ready to experience the magic of Sundarbans?
-            </h2>
-            <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto relative z-10">
-              We offer more than just a place to stay — we offer a calm, meaningful experience connected to nature, wildlife, and local culture.
-            </p>
+
+            <p className="text-white/80 text-3xl mb-10 max-w-2xl mx-auto relative z-10">
+              At Hetalbon Eco Resort, we don’t just offer a place to stay in the Sundarbans — we offer a calm, meaningful experience connected to nature, wildlife, and local culture. </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
               <button
                 onClick={() => navigate('/contact')}
