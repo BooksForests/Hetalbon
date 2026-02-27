@@ -160,7 +160,7 @@ const About = () => {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="flex flex-col lg:flex-row gap-16 items-start">
-            <div className="lg:w-1/3 sticky top-32">
+            <div className="lg:w-1/3 sm:sticky top-32">
               <h2 className="text-4xl font-bold text-gray-900 mb-6">What We Offer</h2>
               <p className="text-gray-600 mb-8 leading-relaxed">
                 At Hetalbon Eco Resort, we focus on simple comfort and warm hospitality. Our spaces are designed to blend with nature while still providing everything you need for a relaxing stay.

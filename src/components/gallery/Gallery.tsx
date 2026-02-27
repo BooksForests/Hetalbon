@@ -58,7 +58,14 @@ const galleryImages = [
   // Rooms
   { url: roomimg1, category: "Rooms" },
   { url: roomimg3, category: "Rooms" },
-  { url: roomimg4, category: "Rooms" },
+  { url: "https://res.cloudinary.com/di4xpdjfs/image/upload/v1772016323/DSC09533_71_gmjlmt.jpg", category: "Rooms" },
+  { url: "https://res.cloudinary.com/di4xpdjfs/image/upload/v1772016317/DSC09533_14_vlyy7y.jpg", category: "Rooms" },
+  { url: "https://res.cloudinary.com/di4xpdjfs/image/upload/v1772016312/DSC09533_121_s591h6.jpg", category: "Rooms" },
+  { url: "https://res.cloudinary.com/di4xpdjfs/image/upload/v1772016316/DSC09533_10_clzh7q.jpg", category: "Rooms" },
+  { url: "https://res.cloudinary.com/di4xpdjfs/image/upload/v1772016309/DSC09533_11_xrlrev.jpg", category: "Rooms" },
+  { url: "https://res.cloudinary.com/di4xpdjfs/image/upload/v1772016316/DSC09533_122_elg54u.jpg", category: "Rooms" },
+  { url: "https://res.cloudinary.com/di4xpdjfs/image/upload/v1772016309/DSC09533_11_xrlrev.jpg", category: "Rooms" },
+  { url: "https://res.cloudinary.com/di4xpdjfs/image/upload/v1772016297/DSC09533_1_ujajpd.jpg", category: "Rooms" },
 
   // Mud Houses
   {
