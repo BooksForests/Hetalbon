@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Home from "./components/Home/Home";
 import RoomDetails from "./components/roomDetails/RoomDetails";
 import BookingsPage from "./components/bookings/BookingsPage";
@@ -22,6 +27,10 @@ const App = () => {
         <Canonical />
         <Routes>
           <Route path="/" element={<Home />} />
+          {/* Legacy URLs. The .htaccess 301 normally handles these before
+              the app loads; this catches stale caches and old bookmarks. */}
+          <Route path="/index.php" element={<Navigate to="/" replace />} />
+          <Route path="/index.html" element={<Navigate to="/" replace />} />
           <Route path="/about" element={<About />} />
           <Route path="/bookings" element={<BookingsPage />} />
           <Route path="/thanks-for-booking" element={<BookingThankPage />} />
