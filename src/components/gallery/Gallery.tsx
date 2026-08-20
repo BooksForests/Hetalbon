@@ -6,8 +6,8 @@ import ImageModal from "./imageModal/ImageModal";
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
-
-const API_URL = "https://server.hetalbon.com/api/v1/cms/pages/69d3705a122e71dc4d47903a";
+import { url } from "../../config/config";
+const API_URL = `${url}/api/v1/cms/pages/69d3705a122e71dc4d47903a`;
 
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -25,10 +25,10 @@ const Gallery = () => {
       try {
         const response = await fetch(API_URL);
         const data = await response.json();
-        
+
         if (data.result && data.result.content) {
           const cmsContent = data.result.content;
-          
+
           // Map header and description
           setContent({
             header: cmsContent.header?.value || "Our Experience",

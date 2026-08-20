@@ -13,11 +13,13 @@ import LoknathBoat from "./components/loknathboat/LoknathBoat";
 import BookingThankPage from "./components/main/bookingThanks/BookingThanks";
 import Thankyoupage from "./components/main/contactThanks/ContactThanks";
 import { WhatsappButton } from "./components/shared/whatsappButton/WhatsappButton";
+import { Canonical } from "./components/shared/Canonical";
 
 const App = () => {
   return (
     <>
       <Router>
+        <Canonical />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

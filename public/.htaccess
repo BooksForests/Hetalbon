@@ -1,0 +1,31 @@
+# Hetalbon — canonical URL rules for Hostinger (Apache / LiteSpeed).
+#
+# Problem this solves: https://www.hetalbon.com/, /index.php, /index.html and
+# the non-www variants all returned 200 with byte-identical content, so Google
+# had four equally valid URLs for one page and picked /index.php for the SERP.
+# These rules collapse them to a single canonical URL.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 1. One host, one scheme: force HTTPS + www.
+  #    Change both lines to the bare domain if you prefer hetalbon.com.
+  RewriteCond %{HTTPS} !=on [OR]
+  RewriteCond %{HTTP_HOST} !^www\. [NC]
+  RewriteRule ^ https://www.hetalbon.com%{REQUEST_URI} [R=301,L,NE]
+
+  # 2. Strip a trailing index.php / index.html from the address bar.
+  #    THE_REQUEST matches only the browser's original request line, so the
+  #    internal rewrite in rule 3 cannot loop back into this redirect.
+  RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.(php|html)[\s?] [NC]
+  RewriteRule ^(.*)index\.(php|html)$ /$1 [R=301,L,NE]
+
+  # 3. SPA fallback: serve real files and directories as-is, send everything
+  #    else to index.html so React Router can handle the route.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ /index.html [L]
+</IfModule>
+
+# Prefer index.html over index.php when a directory is requested.
+DirectoryIndex index.html index.php

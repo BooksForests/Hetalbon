@@ -1,6 +1,6 @@
 const https = require('https');
-
-const API_URL = 'https://server.hetalbon.com/api/v1/cms/pages/69d3705a122e71dc4d47903a';
+const { url } = require('../src/config/config');
+const API_URL = `${url}/api/v1/cms/pages/69d3705a122e71dc4d47903a`;
 
 const galleryImages = [
   // Glassroom
