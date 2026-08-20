@@ -53,11 +53,11 @@ const CruseService = () => {
         <div className="max-w-lg bgImg3 md:max-w-2xl md:z-10 md:shadow-lg md:absolute md:top-0 md:mt-20 lg:w-3/5 lg:right-0">
           <div className="flex flex-col p-12 md:px-16">
             <h2 className="text-2xl font-medium text-white lg:text-4xl">
-              Sundori Cruise Service
+              Sundari Cruise Service
             </h2>
             <p className="mt-4 text-gray-300">
               Experience the beauty of the Sundarbans like never before aboard
-              our houseboat, Machranga Cruise. Immerse yourself in the unique
+              our houseboat, Sundari Cruise. Immerse yourself in the unique
               mangrove landscape and wildlife, enjoying luxurious comfort and
               breathtaking views on your first-time visit. Join us for an
               unforgettable journey through the world's largest delta.
@@ -94,7 +94,7 @@ const CruseService = () => {
             </h2>
             <p className="mt-4 text-gray-300">
               Experience the beauty of the Sundarbans like never before aboard
-              our houseboat, Machranga Cruise. Immerse yourself in the unique
+              our houseboat, Loknath Cruise. Immerse yourself in the unique
               mangrove landscape and wildlife, enjoying luxurious comfort and
               breathtaking views on your first-time visit. Join us for an
               unforgettable journey through the world's largest delta.
